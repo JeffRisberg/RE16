@@ -15,6 +15,20 @@ class DonationList extends Component {
 
     render() {
         const { records, isFetching, lastUpdated } = this.props
+
+        const donationNodes = records.map((donation, key) => {
+            return (
+                <div key={key}>
+                    <div className={donations.id}>
+                        {donation.id}
+                    </div>
+                    <div className={donations.amount}>
+                        {donation.amount}
+                    </div>
+                </div>
+            );
+        });
+
         return (
             <div>
                 <p>
@@ -30,16 +44,7 @@ class DonationList extends Component {
                 }
                 {records.length > 0 &&
                 <div className={donations.table}>
-                    {records.map((donation, key) => (
-                        <div key={key}>
-                            <div className={donations.id}>
-                                {donation.id}
-                            </div>
-                            < div className={donations.amount}>
-                                {donation.amount}
-                            </div>
-                        </div>
-                    ))}
+                    {donationNodes}
                 </div>
                 }
             </div>
