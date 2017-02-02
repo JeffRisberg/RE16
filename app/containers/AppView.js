@@ -9,6 +9,8 @@ class AppView extends React.Component {
     render() {
         return (
             <div className={body}>
+                <img src="/images/logo.gif"/>
+                <br/>
                 <Link to="/">Home</Link>
                 <br/>
                 <Link to="/charities">Charities</Link>
