@@ -2,11 +2,13 @@ import React from 'react';
 
 import { Link } from 'react-router'
 
+import body from '../styles/re16.scss';
+
 class AppView extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={body}>
                 <Link to="/">Home</Link>
                 <br/>
                 <Link to="/charities">Charities</Link>
