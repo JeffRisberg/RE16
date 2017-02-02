@@ -1,0 +1,20 @@
+$donation: #4390fc;
+
+.table {
+  background: #ddd;
+  width: 300px;
+  font-family: arial, sans-serif;
+}
+
+.id {
+  color: black;
+  background: $donation;
+  padding: 5px;
+}
+
+.amount {
+  color: black;
+  background: darken($donation, 20%);
+  padding: 2px;
+  margin-left: 10px;
+}

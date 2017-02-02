@@ -1,0 +1,20 @@
+$charity: #fcc76c;
+
+.table {
+  background: #ddd;
+  width: 300px;
+  font-family: arial, sans-serif;
+}
+
+.name {
+  color: black;
+  background: $charity;
+  padding: 5px;
+}
+
+.description {
+  color: black;
+  background: darken($charity, 20%);
+  padding: 2px;
+  margin-left: 10px;
+}
