@@ -2,18 +2,20 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 
-import AppRoot from './components/AppRoot'
+import AppView from './containers/AppView'
+
 import Home from './components/Home'
 import NamedStyleResolution from './components/NamedStyleResolution'
 import ComposedStyleResolution from './components/ComposedStyleResolution'
 import CharityList from './components/CharityList'
 import DonationList from './components/DonationList'
-import rootSaga from './sagas'
-import rootReducer from './reducers'
+
+import { rootSaga } from './redux/modules/index'
+import rootReducer from './redux/modules/index'
 
 var initialContent = {
     charities: [],
@@ -36,7 +38,7 @@ ReactDom.render(
             <ComposedStyleResolution />
             <br/>
             <Router history={hashHistory}>
-                <Route path="/" component={AppRoot}>
+                <Route path="/" component={AppView}>
                     <IndexRoute component={Home}/>
                     <Route path="charities" component={CharityList}/>
                     <Route path="donations" component={DonationList}/>

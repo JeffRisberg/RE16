@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { requestDonations } from '../actions'
+import { requestDonations } from '../redux/modules/donations'
 
 import donations from './donations.scss';
 

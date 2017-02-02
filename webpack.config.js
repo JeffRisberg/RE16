@@ -5,7 +5,7 @@ const context = path.resolve(__dirname, './app');
 
 module.exports = {
     context,
-    entry: './app.js',
+    entry: './client.js',
     module: {
         loaders: [
             {

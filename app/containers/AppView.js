@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router'
 
-class AppRoot extends React.Component {
+class AppView extends React.Component {
 
     render() {
         return (
@@ -22,4 +22,4 @@ class AppRoot extends React.Component {
     }
 }
 
-export default AppRoot;
+export default AppView;
