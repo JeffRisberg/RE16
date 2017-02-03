@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react'
+import Helmet from 'react-helmet';
+
 import { connect } from 'react-redux'
 import { requestCharities } from '../redux/modules/charities'
 
@@ -18,19 +20,24 @@ class CharityList extends Component {
 
         const charityNodes = records.map((charity, key) => {
             return (
-                <div key={key}>
-                    <div className={charities.name}>
+                <tr key={key}>
+                    <td className={charities.name}>
                         {charity.name}
-                    </div>
-                    <div className={charities.description}>
+                    </td>
+                    <td className={charities.description}>
                         {charity.description}
-                    </div>
-                </div>
+                    </td>
+                </tr>
             );
         });
 
         return (
             <div>
+                <Helmet
+                    title="Charities"
+                    meta={[
+                        {property: 'og:title', content: 'Charities'},
+                    ]} />
                 <p>
                     {lastUpdated &&
                     <span>Last updated at {new Date(lastUpdated).toLocaleTimeString()}</span>
@@ -43,9 +50,9 @@ class CharityList extends Component {
                 <h2>Empty.</h2>
                 }
                 {records.length > 0 &&
-                <div className={charities.table}>
+                <table className={charities.table}>
                     {charityNodes}
-                </div>
+                </table>
                 }
             </div>
         )
